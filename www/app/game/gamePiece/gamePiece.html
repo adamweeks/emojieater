@@ -1,0 +1,11 @@
+<span ng-if="vm.object.removing" class="game-piece">
+    &nbsp;
+</span>
+<span ng-if="!vm.object.removing">
+    <span ng-if="vm.object.isEmpty" class="game-piece">
+        &nbsp;
+    </span>
+    <span ng-if="!vm.object.isEmpty" class="game-piece emoji">
+        {{ vm.object.value }}
+    </span>
+</span>

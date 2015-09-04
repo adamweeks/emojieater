@@ -1,0 +1,10 @@
+<div class="card" ng-if="!vm.showSettings">	
+	<h2 class="title text-center">Welcome to Emoji Eater!</h2>		
+	<button class="button button-block button-positive" ng-click="vm.startGame()">
+		<i class="icon ion-star"></i> Start <i class="icon ion-star"></i>
+	</button>
+	<button class="button button-block button-royal" ng-click="vm.showSettings = !vm.showSettings">
+		<i class="icon ion-gear-a"></i> Settings <i class="icon ion-gear-a"></i>
+	</button>
+</div>
+<game-settings settings="vm.settings" ng-if="vm.showSettings" save-settings="vm.doSaveSettings()"></game-settings> 

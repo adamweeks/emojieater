@@ -1,0 +1,54 @@
+<div ng-if="vm.gameStarted">
+    <div ng-if="!vm.gameOver">
+        <div class="game-board">        
+            <div class="game-row" ng-repeat="row in vm.grid.slice().reverse()">
+                <div class="game-col" ng-repeat="gridObject in row" class="grid-cell" ng-click="gridObject.clickAction($event)">
+                    <game-piece-display object="vm.gamePieceForPosition(gridObject.position)"></game-piece-display>
+                </div>
+            </div>
+        </div>
+        <div class="alert-notification" ng-show="vm.animations.show" ng-click="vm.hideAnimation()">{{ vm.animations.text }}</div>
+        <div class="row">
+            <div class="col text-right">
+                Level:
+            </div>
+            <div class="col text-left">
+                {{ vm.game.level }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-right">
+                Score: 
+            </div>
+            <div class="col text-left">
+                {{ vm.gameScore.points }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-right">
+                Highest Combo:
+            </div>
+            <div class="col text-left">
+                {{ vm.gameScore.combo }}
+            </div>
+        </div>
+        <div class="row">
+            <button class="button button-assertive" ng-click="vm.gameStarted = false">End Game</button>
+        </div>
+    </div>
+    <div ng-if="vm.gameOver">
+        <div class="row">
+            <h2>Game Over!</h2>
+            <h4>No more moves left.</h4>
+        </div>
+        <div class="row">
+            Your Score: {{ vm.gameScore }}
+        </div>
+        <div class="row">
+            <button class="button button-assertive" ng-click="vm.restartGame()">Restart Game</button>
+        </div>
+    </div>
+</div>
+<div ng-if="!vm.gameStarted">
+    <game-start start-game="vm.startGame()" settings="vm.settings" save-settings="vm.saveSettings()"></game-start>    
+</div>

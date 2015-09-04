@@ -1,0 +1,56 @@
+body {
+    padding-top: 50px;
+}
+
+* {margin: 0; padding: 0;}
+
+
+.game-piece {    
+    font-size: 25px;
+    line-height: 36px;        
+    display: block;
+    text-align: center;
+    -webkit-transform: scale(1.5);
+}
+
+.game-row {
+    width: 100%;
+    display: block;    
+}
+
+.game-col {
+    width: 10%;
+    display: block;
+    float: left;
+}
+
+.game-board {
+    background-color: purple;
+}
+
+.alert-notification {
+        -webkit-transition: all linear 0.25s;
+        transition: all ease-in 0.25s;        
+        opacity: 0.9;        
+        border: 1px solid black;
+        background: white;
+        line-height: 100px;
+        height: 100px;
+        position: absolute;
+        top: 25%;
+        font-size: 60px;
+        font-weight: bold;
+        width: 100%;
+        text-align: center;
+      }
+      
+.alert-notification.ng-hide {
+    font-size: 0;
+    opacity: 0;    
+    }
+    
+ion-content {
+   background-color: #d11f00;
+background-image: url(http://www.transparenttextures.com/patterns/diamond-upholstery.png);
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */    
+}

@@ -1,0 +1,42 @@
+<ion-content scroll="y">
+
+    <h2 class="text-center">Settings</h2>
+    
+    <div class="card list">
+        <div class="item item-divider">
+            Game Theme
+        </div>
+        
+        <div ng-repeat="(name, theme) in vm.themes">
+             <label class="item item-radio">
+                <input type="radio" name="group" ng-model="vm.settings.chosenTheme" ng-value="name">
+                <div class="item-content">
+                  {{ name }}
+                </div>
+                <i class="radio-icon ion-checkmark"></i>
+              </label>            
+        </div>
+        
+        <div class="item item-divider">
+            Developer Settings
+        </div>
+        <div class="item">
+            Disappear: {{vm.settings.times.disappear}}
+        </div>
+        <div class="item range range-positive">
+            <i class="icon ion-ios-rewind"></i>
+            <input type="range" name="disappear" min="0" max="500" ng-model="vm.settings.times.disappear">
+            <i class="icon ion-ios-fastforward"></i>
+        </div>
+        <div class="item">
+            Reappear: {{vm.settings.times.reappear}}
+        </div>
+        <div class="item range range-positive">
+            <i class="icon ion-ios-rewind"></i>
+            <input type="range" name="volume" min="0" max="500" ng-model="vm.settings.times.reappear">
+            <i class="icon ion-ios-fastforward"></i>
+        </div>
+        
+    </div>
+    <button class="button button-block button-positive" ng-click="vm.saveSettings()">Save</button>
+</ion-content>
